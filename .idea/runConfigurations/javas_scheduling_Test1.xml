@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="javas scheduling Test1" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="javascheduling.ThreadTest1" />
+    <module name="threads-examples" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
