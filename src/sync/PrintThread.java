@@ -1,15 +1,15 @@
 package sync;
 
-public class PrintThreadSynchronized extends Thread{
+public class PrintThread extends Thread {
     String name;
-    MyPrinter printer;
+    MyPrinterSynchronized printer;
 
-    public PrintThreadSynchronized(String name) {
+    public PrintThread(String name) {
 
         this.name = name;
     }
 
-    public void setPrinter(MyPrinter p) {
+    public void setPrinter(MyPrinterSynchronized p) {
 
         printer = p;
     }

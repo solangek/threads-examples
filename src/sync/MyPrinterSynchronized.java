@@ -1,9 +1,9 @@
 package sync;
 
 
-public class MyPrinter {
+public class MyPrinterSynchronized {
 
-    public MyPrinter() {}
+    public MyPrinterSynchronized() {}
 
     public synchronized void printName(String name) {
 	

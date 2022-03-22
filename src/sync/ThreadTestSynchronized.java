@@ -5,21 +5,25 @@ public class ThreadTestSynchronized {
 
     public static void main(String args[]) {
 
-        MyPrinter myPrinter = new MyPrinter();
+        // the object on which threads will synchronize
+        MyPrinterSynchronized myPrinter = new MyPrinterSynchronized();
 
-        PrintThreadSynchronized a = new PrintThreadSynchronized("*");
-        PrintThreadSynchronized b = new PrintThreadSynchronized("-");
-        PrintThreadSynchronized c = new PrintThreadSynchronized("_");
+        PrintThread a = new PrintThread("*");
+        PrintThread b = new PrintThread("-");
+        PrintThread c = new PrintThread("_");
 
+        // pass the shared object to the threads
         a.setPrinter(myPrinter);
         b.setPrinter(myPrinter);
         c.setPrinter(myPrinter);
 
         System.out.println();
 
+        // start the threads
         a.start();
         b.start();
         c.start();
+
         System.out.println("ThreadTest3 finished");
     }
 
