@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class RunnerWithFlag extends Thread {
     String name;
 
-    private AtomicBoolean keepRunning = new AtomicBoolean(true);
+    private final AtomicBoolean keepRunning = new AtomicBoolean(true);
 
     public RunnerWithFlag(String name) {
     	this.name = name;
@@ -18,6 +18,7 @@ public class RunnerWithFlag extends Thread {
 				sleep((long)(Math.random() * 100));
 			} catch (InterruptedException ie) {
 				System.out.println("thread sleep " + name + " interrupted");
+				keepRunning.set(false); // thread must stop
 			}
 			System.out.print(name);
 			if (!keepRunning.get())
@@ -28,7 +29,7 @@ public class RunnerWithFlag extends Thread {
 
 
     public void setKeepRunning(boolean r) {
-		keepRunning.set(false);
+		keepRunning.set(r);
 	}
 }
 

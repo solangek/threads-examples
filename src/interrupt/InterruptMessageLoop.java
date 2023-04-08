@@ -12,7 +12,9 @@ package interrupt;
  */
 public class InterruptMessageLoop {
 
-    public static void main(String args[]) throws InterruptedException {
+    static final int DEFAULT_PATIENCE = 10;
+
+    public static void main(String[] args) throws InterruptedException {
 
         // Delay, in milliseconds before we interrupt MessageLoop
         long patience = 1000 * 3;
@@ -22,15 +24,14 @@ public class InterruptMessageLoop {
             try {
                 patience = Long.parseLong(args[0]) * 1000;
             } catch (NumberFormatException e) {
-                System.err.println("Argument must be an integer.");
-                System.exit(1);
+                patience = DEFAULT_PATIENCE;
+                System.err.println("Using default patience of " + patience + " ms");
             }
         }
 
         // print a message, notice that current thread is not MessageLoop
         // but the thread that called MessageLoop (the main thread)
         MessageLoop.threadMessage("Starting MessageLoop thread");
-
 
         // record start time to compute elapsed time
         long startTime = System.currentTimeMillis();

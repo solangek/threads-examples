@@ -13,7 +13,9 @@ public class MyPrinterSynchronized {
 				// sleep does not release the lock inside a critical section
 				// therefore the thread will hold the lock until it finishes
 				Thread.sleep((long)(Math.random() * 100));
-			} catch (InterruptedException ie) {}
+			} catch (InterruptedException ie) {
+				break;
+			}
 
 			System.out.print(name);
 		}

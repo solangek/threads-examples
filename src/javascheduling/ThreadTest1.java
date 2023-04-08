@@ -1,9 +1,7 @@
 package javascheduling;
 
-import javascheduling.PrintThread1;
-
 public class ThreadTest1 {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 		PrintThread1 a = new PrintThread1("*");
 		PrintThread1 b = new PrintThread1("-");
 		PrintThread1 c = new PrintThread1("_");
@@ -12,9 +10,16 @@ public class ThreadTest1 {
 		c.start();
 
 		// can wait for threads to finish
-//		try { a.join(); } catch (InterruptedException e) {}
-//		try { b.join(); } catch (InterruptedException e) {}
-//		try { c.join(); } catch (InterruptedException e) {}
+//		try {
+//			a.join();
+//			b.join();
+//			c.join();
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		} finally {
+//			System.out.println("All threads finished");
+//		}
+
 		System.out.println("ThreadTest1 finished");
 
     }

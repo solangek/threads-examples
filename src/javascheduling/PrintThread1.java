@@ -12,9 +12,12 @@ public class PrintThread1 extends Thread {
 
     private void printName() {
 		for (int i=1; i<50 ; i++) {
+			// we can also yield() here
 			try {
 			sleep((long)(Math.random() * 100));
-			} catch (InterruptedException ie) {}
+			} catch (InterruptedException ie) {
+				break;
+			}
 
 			System.out.print(name);
 		}
