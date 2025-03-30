@@ -15,7 +15,7 @@ public class ThreadPoolExample {
         ExecutorService pool = Executors.newFixedThreadPool(3);
         for (int i = 0; i < 10; i++) {
             PrintThread1 thread = new PrintThread1("" + i);
-            pool.submit(thread);
+            pool.execute(thread);
         }
 
         // shutdown the pool means no new tasks will be accepted
