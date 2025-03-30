@@ -15,6 +15,7 @@ public class PrintThread2 extends Thread {
     }
 
     private void printName() {
+        System.out.println("Thread " + name + " started");
         for (int i=1; i<50 ; i++) {
             System.out.print(name);
         }

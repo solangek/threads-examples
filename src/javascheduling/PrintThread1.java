@@ -11,6 +11,7 @@ public class PrintThread1 extends Thread {
     }
 
     private void printName() {
+		System.out.println("Thread " + name + " started");
 		for (int i=1; i<50 ; i++) {
 			// we can also yield() here
 			try {
